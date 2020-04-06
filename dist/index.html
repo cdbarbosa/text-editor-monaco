@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monaco Editor</title>
+    <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+
+    <script>function handleSaveFile() {
+  var value = window.editor.getValue();
+  var filename = "text.yaml";
+  var blob = new Blob([value], {
+    type: "text/plain;charset=utf-8"
+  });
+  saveAs(blob, filename);
+}</script>
+  <link rel="stylesheet" href="/monaco.e31bb0bc.css"></head>
+  <body>
+    <div id="editor-monaco" style="height: 300px; border: 1px solid grey;"></div>
+
+    <button onclick="handleSaveFile()" style="margin-top: 10px;">
+      Show file
+    </button>
+    <script src="/monaco.e31bb0bc.js" type="module"></script>
+  </body>
+</html>
